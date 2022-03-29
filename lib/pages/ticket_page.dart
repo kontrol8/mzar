@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mzar/widgets/app_colors.dart';
+import 'package:mzar/misc/app_colors.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
 class TicketPAge extends StatelessWidget {

@@ -11,10 +11,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+        themeMode: ThemeMode.system,
         debugShowCheckedModeBanner: false,
         title: 'Mzar.IO App',
         theme: ThemeData(
-          primarySwatch: Colors.deepPurple,
+          primarySwatch: Colors.indigo,
         ),
         home: Directionality(
             textDirection: TextDirection.rtl, child: MainPage()));
