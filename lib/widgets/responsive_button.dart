@@ -19,16 +19,14 @@ class ResponsiveButton extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          isResponsive == true
-              ? Text(
+          if (isResponsive == true) Text(
                   text!,
                   style: TextStyle(
                     fontSize: 18,
                     color: Colors.white,
                     fontFamily: "janna",
                   ),
-                )
-              : Text(''),
+                ) else Text(''),
           Image(
             image: AssetImage("assets/images/button.png"),
           ),
