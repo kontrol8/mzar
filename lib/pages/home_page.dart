@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:mzar/misc/app_colors.dart';
 import 'package:mzar/pages/detail_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -18,10 +20,10 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   };
   var tabGlobe = {"wahi.png": "معرض الوحي", "safiya.png": "متحف الصافية"};
   var menuIcons = {
-    "showroomicon.png": "معارض ومتاحف",
-    "makkahicon.png": "معالم مكة المكرمة",
-    "madinahicon.png": "معالم المدينة المنورة",
-    "activityicon.png": "أنشطة",
+    "museum.svg": "معارض ومتاحف",
+    "makkah.svg": "معالم مكة المكرمة",
+    "madinah.svg": "معالم المدينة المنورة",
+    "activity.svg": "أنشطة",
   };
   @override
   Widget build(BuildContext context) {
@@ -141,6 +143,23 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                       tabGlobe.keys.elementAt(index)),
                                   fit: BoxFit.cover),
                             ),
+                            child: Container(
+                              height: 250,
+                              width: 180,
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  Text(
+                                    tabGlobe.values.elementAt(index),
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontFamily: "Janna",
+                                      fontSize: 18,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
                           );
                         },
                       ),
@@ -213,11 +232,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   ],
                 ),
               ),
-              SizedBox(
-                height: 5,
-              ),
+              SizedBox(height: 5),
               Container(
-                height: 130,
+                height: 165,
                 margin: const EdgeInsets.only(right: 20),
                 width: double.maxFinite,
                 child: Container(
@@ -234,30 +251,33 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                           Container(
                             margin: const EdgeInsets.only(right: 25, left: 25),
                             width: 60,
-                            height: 50,
+                            height: 60,
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
-                              color: Colors.white,
-                              image: DecorationImage(
-                                  image: AssetImage("assets/images/" +
-                                      menuIcons.keys.elementAt(index)),
-                                  fit: BoxFit.cover),
+                                borderRadius: BorderRadius.circular(5),
+                                color: AppColors.AppIconColors[index]),
+                            child: Container(
+                              height: 30,
+                              width: 30,
+                              child: SvgPicture.asset(
+                                "assets/svg/" + menuIcons.keys.elementAt(index),
+                                matchTextDirection: true,
+                                fit: BoxFit.fitHeight,
+                              ),
                             ),
                           ),
-                          SizedBox(
-                            height: 5,
-                          ),
                           Container(
-                            width: 85,
+                            width: 70,
                             height: 60,
                             child: Text(
                               menuIcons.values.elementAt(index),
                               style: TextStyle(
-                                  overflow: TextOverflow.ellipsis,
                                   fontSize: 14,
                                   fontFamily: "janna",
                                   color: Colors.black45,
+                                  height: 1.5,
                                   fontWeight: FontWeight.bold),
+                              overflow: TextOverflow.ellipsis,
+                              //  softWrap: false,
                               maxLines: 2,
                               textAlign: TextAlign.center,
                             ),
