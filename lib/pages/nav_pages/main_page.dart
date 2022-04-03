@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mzar/pages/home_page.dart';
 import 'package:mzar/pages/nav_pages/bar_item_page.dart';
 import 'package:mzar/pages/nav_pages/my_page.dart';
@@ -31,7 +32,6 @@ class _MainPageState extends State<MainPage> {
       body: pages[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         onTap: onTap,
-        iconSize: 25,
         currentIndex: currentIndex,
         selectedItemColor: Colors.black54,
         unselectedItemColor: Colors.grey.withOpacity(0.5),
@@ -41,9 +41,29 @@ class _MainPageState extends State<MainPage> {
         unselectedFontSize: 0,
         elevation: 0,
         items: [
-          BottomNavigationBarItem(label: (""), icon: Icon(Icons.apps)),
-          BottomNavigationBarItem(label: (""), icon: Icon(Icons.bar_chart)),
-          BottomNavigationBarItem(label: (""), icon: Icon(Icons.search)),
+          BottomNavigationBarItem(
+              label: (""),
+              icon: SvgPicture.asset(
+                "assets/svg/main.svg",
+                color: Colors.black,
+                height: 15,
+                width: 15,
+              )),
+          BottomNavigationBarItem(
+              label: (""),
+              icon: SvgPicture.asset(
+                "assets/svg/stats.svg",
+                color: Colors.black,
+                height: 15,
+                width: 15,
+              )),
+          BottomNavigationBarItem(
+              label: (""),
+              icon: SvgPicture.asset(
+                "assets/svg/search.svg",
+                height: 15,
+                width: 15,
+              )),
           BottomNavigationBarItem(label: (""), icon: Icon(Icons.person))
         ],
       ),

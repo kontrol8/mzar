@@ -8,4 +8,5 @@ class AppColors {
     Color.fromRGBO(238, 246, 248, 5),
     Color.fromRGBO(243, 244, 249, 5),
   ];
+  static final Color AppTrans = Colors.transparent;
 }

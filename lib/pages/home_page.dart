@@ -258,10 +258,19 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                             child: Container(
                               height: 30,
                               width: 30,
-                              child: SvgPicture.asset(
-                                "assets/svg/" + menuIcons.keys.elementAt(index),
-                                matchTextDirection: true,
-                                fit: BoxFit.fitHeight,
+                              child: IconButton(
+                                icon: SvgPicture.asset(
+                                  "assets/svg/" +
+                                      menuIcons.keys.elementAt(index),
+                                  height: 30,
+                                  width: 30,
+                                  matchTextDirection: true,
+                                  fit: BoxFit.fitHeight,
+                                ),
+                                onPressed: () {},
+                                color: AppColors.AppTrans,
+                                highlightColor: AppColors.AppTrans,
+                                hoverColor: AppColors.AppTrans,
                               ),
                             ),
                           ),
