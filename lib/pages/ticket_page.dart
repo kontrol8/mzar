@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mzar/misc/app_colors.dart';
+import 'package:mzar/widgets/app_text.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
 class TicketPAge extends StatelessWidget {
@@ -13,7 +14,7 @@ class TicketPAge extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("مبروك تم حجز التذكرة"),
+              AppText("مبروك تم حجز التذكرة", AppColors.AppMainColor, 18),
               Container(
                 decoration: BoxDecoration(
                     border: Border.all(width: 0.6),

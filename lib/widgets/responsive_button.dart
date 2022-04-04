@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class ResponsiveButton extends StatelessWidget {
-  bool? isResponsive;
-  double? width;
-  String? text;
+  final bool? isResponsive;
+  final double? width;
+  final String? text;
   ResponsiveButton({Key? key, this.width, this.isResponsive = false, this.text})
       : super(key: key);
 
@@ -19,14 +19,17 @@ class ResponsiveButton extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          if (isResponsive == true) Text(
-                  text!,
-                  style: TextStyle(
-                    fontSize: 18,
-                    color: Colors.white,
-                    fontFamily: "janna",
-                  ),
-                ) else Text(''),
+          if (isResponsive == true)
+            Text(
+              text!,
+              style: TextStyle(
+                fontSize: 18,
+                color: Colors.white,
+                fontFamily: "janna",
+              ),
+            )
+          else
+            Text(''),
           Image(
             image: AssetImage("assets/images/button.png"),
           ),

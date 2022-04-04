@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:mzar/misc/app_colors.dart';
 import 'package:mzar/pages/detail_page.dart';
+import 'package:mzar/widgets/app_text.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -38,19 +39,32 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 padding: const EdgeInsets.only(top: 10, right: 30),
                 child: Row(
                   children: [
-                    Icon(Icons.menu, size: 40, color: Colors.black54),
+                    // Icon(Icons.menu, size: 40, color: Colors.black54),
+                    Container(
+                      height: 30,
+                      width: 30,
+                      child: SvgPicture.asset(
+                        'assets/svg/menu.svg',
+                        color: AppColors.AppMainColor,
+                        matchTextDirection: true,
+                      ),
+                    ),
                     Expanded(child: Container()),
                     Container(
-                      height: 55,
-                      width: 55,
+                      height: 40,
+                      width: 40,
                       margin: const EdgeInsets.only(left: 30),
                       child: DecoratedBox(
-                        child: Image(
-                          image: AssetImage("assets/images/person.png"),
+                        child: Padding(
+                          padding: const EdgeInsets.all(13.0),
+                          child: SvgPicture.asset(
+                            'assets/svg/profile.svg',
+                            color: AppColors.AppIconColors[0],
+                          ),
                         ),
                         decoration: BoxDecoration(
-                          color: Color.fromRGBO(150, 126, 80, 5),
-                          borderRadius: BorderRadius.circular(20),
+                          color: AppColors.AppMainColor,
+                          borderRadius: BorderRadius.circular(10),
                         ),
                       ),
                     ),
@@ -144,20 +158,64 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                   fit: BoxFit.cover),
                             ),
                             child: Container(
-                              height: 250,
-                              width: 180,
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: [
-                                  Text(
-                                    tabGlobe.values.elementAt(index),
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontFamily: "Janna",
-                                      fontSize: 18,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                gradient: LinearGradient(
+                                  colors: [
+                                    Colors.black.withOpacity(0.7),
+                                    Colors.white.withOpacity(0.1)
+                                  ],
+                                  begin: Alignment.bottomCenter,
+                                  end: Alignment.topCenter,
+                                  stops: [0.2, 0.3],
+                                ),
+                              ),
+                              child: Container(
+                                height: 250,
+                                width: 180,
+                                margin: const EdgeInsets.only(
+                                    right: 20, bottom: 10),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: [
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          tabGlobe.values.elementAt(index),
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontFamily: "Janna",
+                                            fontSize: 18,
+                                          ),
+                                        ),
+                                      ],
                                     ),
-                                  ),
-                                ],
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      children: [
+                                        Icon(
+                                          Icons.place,
+                                          color: Colors.white,
+                                          size: 12,
+                                        ),
+                                        SizedBox(
+                                          width: 5,
+                                        ),
+                                        Text(
+                                          "مكة المكرمة",
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 12,
+                                            fontFamily: "Janna",
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           );
@@ -235,7 +293,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
               SizedBox(height: 5),
               Container(
                 height: 165,
-                margin: const EdgeInsets.only(right: 20),
+                margin: const EdgeInsets.only(right: 10),
                 width: double.maxFinite,
                 child: Container(
                   width: double.maxFinite,
@@ -249,7 +307,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           Container(
-                            margin: const EdgeInsets.only(right: 25, left: 25),
+                            margin: const EdgeInsets.only(right: 15, left: 20),
                             width: 60,
                             height: 60,
                             decoration: BoxDecoration(
@@ -275,22 +333,10 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                             ),
                           ),
                           Container(
-                            width: 70,
-                            height: 60,
-                            child: Text(
-                              menuIcons.values.elementAt(index),
-                              style: TextStyle(
-                                  fontSize: 14,
-                                  fontFamily: "janna",
-                                  color: Colors.black45,
-                                  height: 1.5,
-                                  fontWeight: FontWeight.bold),
-                              overflow: TextOverflow.ellipsis,
-                              //  softWrap: false,
-                              maxLines: 2,
-                              textAlign: TextAlign.center,
-                            ),
-                          )
+                              width: 70,
+                              height: 60,
+                              child: AppText(menuIcons.values.elementAt(index),
+                                  Colors.black, 12))
                         ],
                       );
                     },

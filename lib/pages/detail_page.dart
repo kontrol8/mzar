@@ -231,25 +231,33 @@ class _DetailPageState extends State<DetailPage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    AppButton(
-                        isIcon: true,
-                        icon: Icons.favorite_border_outlined,
-                        size: 40,
-                        color: Color.fromRGBO(150, 126, 80, 5),
-                        backgroundColor: Colors.white,
-                        borderColor: Color.fromRGBO(150, 126, 80, 5)),
-                    GestureDetector(
-                      onTap: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => Directionality(
-                            textDirection: TextDirection.rtl,
-                            child: const TicketPAge(),
+                    Container(
+                      width: 45,
+                      child: AppButton(
+                          isIcon: true,
+                          icon: Icons.favorite_border_outlined,
+                          size: 40,
+                          color: Color.fromRGBO(150, 126, 80, 5),
+                          backgroundColor: Colors.white,
+                          borderColor: Color.fromRGBO(150, 126, 80, 5)),
+                    ),
+                    Container(
+                      // width: double.maxFinite,
+                      child: GestureDetector(
+                        onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => Directionality(
+                              textDirection: TextDirection.rtl,
+                              child: const TicketPAge(),
+                            ),
                           ),
                         ),
+                        child: ResponsiveButton(
+                            width: MediaQuery.of(context).size.width - 100,
+                            isResponsive: true,
+                            text: " احجزالان"),
                       ),
-                      child: ResponsiveButton(
-                          width: 200, isResponsive: true, text: " احجزالان"),
                     )
                   ],
                 ),
