@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mzar/pages/ticket_page.dart';
-import 'package:mzar/widgets/app_buttons.dart';
-import 'package:mzar/widgets/responsive_button.dart';
+import 'package:SAMAYA/pages/ticket_page.dart';
+import 'package:SAMAYA/widgets/app_buttons.dart';
+import 'package:SAMAYA/widgets/responsive_button.dart';
 
 class DetailPage extends StatefulWidget {
   const DetailPage({Key? key}) : super(key: key);

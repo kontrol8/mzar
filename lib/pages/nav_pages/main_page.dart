@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:mzar/pages/home_page.dart';
-import 'package:mzar/pages/nav_pages/bar_item_page.dart';
-import 'package:mzar/pages/nav_pages/my_page.dart';
-import 'package:mzar/pages/nav_pages/search_page.dart';
+import 'package:SAMAYA/pages/home_page.dart';
+import 'package:SAMAYA/pages/nav_pages/bar_item_page.dart';
+import 'package:SAMAYA/pages/nav_pages/my_page.dart';
+import 'package:SAMAYA/pages/nav_pages/search_page.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:mzar/misc/app_colors.dart';
-import 'package:mzar/pages/detail_page.dart';
-import 'package:mzar/widgets/app_text.dart';
+import 'package:SAMAYA/misc/app_colors.dart';
+import 'package:SAMAYA/pages/detail_page.dart';
+import 'package:SAMAYA/widgets/app_text.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);

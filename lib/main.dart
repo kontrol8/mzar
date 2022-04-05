@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mzar/pages/nav_pages/main_page.dart';
+import 'package:SAMAYA/pages/nav_pages/main_page.dart';
 
 void main() {
   runApp(const MyApp());
