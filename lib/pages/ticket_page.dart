@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:SAMAYA/misc/app_colors.dart';
 import 'package:SAMAYA/widgets/app_text.dart';
-import 'package:flutter_svg/svg.dart';
+
 import 'package:qr_flutter/qr_flutter.dart';
 
 class TicketPAge extends StatelessWidget {
