@@ -34,10 +34,6 @@ class TicketPAge extends StatelessWidget {
                     child: QrImage(
                       data: "Kontrol8",
                       version: 4,
-                      embeddedImage: AssetImage("assets/images/icon.png"),
-                      embeddedImageStyle: QrEmbeddedImageStyle(
-                        size: Size(80, 80),
-                      ),
                       errorCorrectionLevel: QrErrorCorrectLevel.H,
                       foregroundColor: AppColors.AppMainColor,
                       size: 270.0,
