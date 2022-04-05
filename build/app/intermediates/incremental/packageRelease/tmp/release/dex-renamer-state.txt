@@ -1,0 +1,4 @@
+#Tue Apr 05 22:36:09 AST 2022
+base.0=D\:\\projects\\mzar\\build\\app\\intermediates\\dex\\release\\minifyReleaseWithR8\\classes.dex
+renamed.0=classes.dex
+path.0=classes.dex

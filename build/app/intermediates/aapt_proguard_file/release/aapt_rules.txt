@@ -1,0 +1,3 @@
+-keep class android.app.Application { <init>(); }
+-keep class androidx.core.app.CoreComponentFactory { <init>(); }
+-keep class to.mazar.app.mzar.MainActivity { <init>(); }

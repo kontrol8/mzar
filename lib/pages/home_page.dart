@@ -1,3 +1,4 @@
+import 'package:SAMAYA/widgets/list_view_builder.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:SAMAYA/misc/app_colors.dart';
@@ -150,296 +151,43 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   child: TabBarView(
                     controller: _tabController,
                     children: [
+                      //Globe
                       ListView.builder(
-                        itemCount: tabGlobe.length,
-                        scrollDirection: Axis.horizontal,
-                        itemBuilder: (BuildContext context, int index) {
-                          return Container(
-                            margin: const EdgeInsets.only(left: 20),
-                            width: 180,
-                            height: 250,
-                            decoration: BoxDecoration(
-                              border:
-                                  Border.all(color: Colors.white, width: 1.0),
-                              borderRadius: BorderRadius.only(
-                                  topLeft: Radius.circular(20),
-                                  topRight: Radius.circular(20),
-                                  bottomLeft: Radius.circular(20),
-                                  bottomRight: Radius.circular(20)),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.grey.withOpacity(0.5),
-                                  spreadRadius: 1,
-                                  blurRadius: 1,
-                                  offset: Offset(
-                                      0, 1), // changes position of shadow
-                                ),
-                              ],
-                              color: Colors.white,
-                              image: DecorationImage(
-                                  image: AssetImage("assets/images/" +
-                                      tabGlobe.keys.elementAt(index)),
-                                  fit: BoxFit.cover),
-                            ),
-                            child: Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(20),
-                                gradient: LinearGradient(
-                                  colors: [
-                                    Colors.black.withOpacity(0.7),
-                                    Colors.white.withOpacity(0.1)
-                                  ],
-                                  begin: Alignment.bottomCenter,
-                                  end: Alignment.topCenter,
-                                  stops: [0.2, 0.3],
-                                ),
-                              ),
-                              child: Container(
-                                height: 250,
-                                width: 180,
-                                margin: const EdgeInsets.only(
-                                    right: 20, bottom: 10),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  children: [
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          tabGlobe.values.elementAt(index),
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                            fontFamily: "Janna",
-                                            fontSize: 18,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      children: [
-                                        Icon(
-                                          Icons.place,
-                                          color: Colors.white,
-                                          size: 12,
-                                        ),
-                                        SizedBox(
-                                          width: 5,
-                                        ),
-                                        Text(
-                                          tabGlobePlace.values.elementAt(index),
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                            fontSize: 12,
-                                            fontFamily: "Janna",
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          );
-                        },
-                      ),
+                          itemCount: tabGlobe.length,
+                          scrollDirection: Axis.horizontal,
+                          itemBuilder: (BuildContext context, index) {
+                            return AppListView(
+                              ImageText: tabGlobe.values.elementAt(index),
+                              imageName: tabGlobe.keys.elementAt(index),
+                              ImagePlace: tabGlobePlace.values.elementAt(index),
+                            );
+                          }),
+
+                      //Showroom
                       ListView.builder(
-                        itemCount: tabShowroom.length,
-                        scrollDirection: Axis.horizontal,
-                        itemBuilder: (BuildContext context, int index) {
-                          return Container(
-                              margin: const EdgeInsets.only(left: 20),
-                              width: 180,
-                              height: 250,
-                              decoration: BoxDecoration(
-                                border:
-                                    Border.all(color: Colors.white, width: 1.0),
-                                borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(20),
-                                    topRight: Radius.circular(20),
-                                    bottomLeft: Radius.circular(20),
-                                    bottomRight: Radius.circular(20)),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.grey.withOpacity(0.5),
-                                    spreadRadius: 1,
-                                    blurRadius: 1,
-                                    offset: Offset(
-                                        0, 1), // changes position of shadow
-                                  ),
-                                ],
-                                color: Colors.white,
-                                image: DecorationImage(
-                                    image: AssetImage("assets/images/" +
-                                        tabShowroom.keys.elementAt(index)),
-                                    fit: BoxFit.cover),
-                              ),
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20),
-                                  gradient: LinearGradient(
-                                    colors: [
-                                      Colors.black.withOpacity(0.7),
-                                      Colors.white.withOpacity(0.1)
-                                    ],
-                                    begin: Alignment.bottomCenter,
-                                    end: Alignment.topCenter,
-                                    stops: [0.2, 0.3],
-                                  ),
-                                ),
-                                child: Container(
-                                  height: 250,
-                                  width: 180,
-                                  margin: const EdgeInsets.only(
-                                      right: 20, bottom: 10),
-                                  child: Container(
-                                    child: Column(
-                                      mainAxisAlignment: MainAxisAlignment.end,
-                                      children: [
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.start,
-                                          children: [
-                                            Text(
-                                              tabShowroom.values
-                                                  .elementAt(index),
-                                              style: TextStyle(
-                                                color: Colors.white,
-                                                fontFamily: "Janna",
-                                                fontSize: 18,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.start,
-                                          children: [
-                                            Icon(
-                                              Icons.place,
-                                              color: Colors.white,
-                                              size: 12,
-                                            ),
-                                            SizedBox(
-                                              width: 5,
-                                            ),
-                                            Text(
-                                              tabShowroomPlace.values
-                                                  .elementAt(index),
-                                              style: TextStyle(
-                                                color: Colors.white,
-                                                fontSize: 12,
-                                                fontFamily: "Janna",
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ));
-                        },
-                      ),
+                          itemCount: tabShowroom.length,
+                          scrollDirection: Axis.horizontal,
+                          itemBuilder: (BuildContext context, index) {
+                            return AppListView(
+                              ImageText: tabShowroom.values.elementAt(index),
+                              imageName: tabShowroom.keys.elementAt(index),
+                              ImagePlace:
+                                  tabShowroomPlace.values.elementAt(index),
+                            );
+                          }),
+
+                      // Museum
                       ListView.builder(
-                        itemCount: tabMuseum.length,
-                        scrollDirection: Axis.horizontal,
-                        //reverse: true,
-                        itemBuilder: (BuildContext context, int index) {
-                          return Container(
-                            margin: const EdgeInsets.only(left: 20),
-                            width: 180,
-                            height: 250,
-                            decoration: BoxDecoration(
-                              border:
-                                  Border.all(color: Colors.white, width: 1.0),
-                              borderRadius: BorderRadius.only(
-                                  topLeft: Radius.circular(20),
-                                  topRight: Radius.circular(20),
-                                  bottomLeft: Radius.circular(20),
-                                  bottomRight: Radius.circular(20)),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.grey.withOpacity(0.5),
-                                  spreadRadius: 1,
-                                  blurRadius: 1,
-                                  offset: Offset(
-                                      0, 1), // changes position of shadow
-                                ),
-                              ],
-                              color: Colors.white,
-                              image: DecorationImage(
-                                  image: AssetImage("assets/images/" +
-                                      tabMuseum.keys.elementAt(index)),
-                                  fit: BoxFit.cover),
-                            ),
-                            child: Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(20),
-                                gradient: LinearGradient(
-                                  colors: [
-                                    Colors.black.withOpacity(0.7),
-                                    Colors.white.withOpacity(0.1)
-                                  ],
-                                  begin: Alignment.bottomCenter,
-                                  end: Alignment.topCenter,
-                                  stops: [0.2, 0.3],
-                                ),
-                              ),
-                              child: Container(
-                                height: 250,
-                                width: 180,
-                                margin: const EdgeInsets.only(
-                                    right: 20, bottom: 10),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  children: [
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          tabMuseum.values.elementAt(index),
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                            fontFamily: "Janna",
-                                            fontSize: 18,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      children: [
-                                        Icon(
-                                          Icons.place,
-                                          color: Colors.white,
-                                          size: 12,
-                                        ),
-                                        SizedBox(
-                                          width: 5,
-                                        ),
-                                        Text(
-                                          tabMuseumPlace.values
-                                              .elementAt(index),
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                            fontSize: 12,
-                                            fontFamily: "Janna",
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          );
-                        },
-                      ),
+                          itemCount: tabMuseum.length,
+                          scrollDirection: Axis.horizontal,
+                          itemBuilder: (BuildContext context, index) {
+                            return AppListView(
+                              ImageText: tabMuseum.values.elementAt(index),
+                              imageName: tabMuseum.keys.elementAt(index),
+                              ImagePlace:
+                                  tabMuseumPlace.values.elementAt(index),
+                            );
+                          }),
                     ],
                   ),
                 ),
