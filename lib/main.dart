@@ -17,7 +17,10 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.indigo,
         ),
-        home: Directionality(
-            textDirection: TextDirection.rtl, child: MainPage()));
+        home: AspectRatio(
+          aspectRatio: 16 / 9,
+          child: Directionality(
+              textDirection: TextDirection.rtl, child: MainPage()),
+        ));
   }
 }
